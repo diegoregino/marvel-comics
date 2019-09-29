@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+  --black: #202020;
+  --gray: #EFEFEF;
+  --gray-favorites: #CFCFCF;
+  --red-marvel: #F0141E;
+  --roboto: 'Roboto',
+  sans-serif;
+  --roboto-cond: 'Roboto Condensed',
+  sans-serif;
+  --white: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  outline: none;
+  padding: 0;
+}
+
+body {
+  background: var(--gray);
+}
+
+button {
+  border: none;
+  font-family: var(--roboto);
+  font-weight: bold;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: var(--black);
+}
+
+button.btn_primary {
+  background: var(--red-marvel);
+  color: var(--white);
+  text-transform: uppercase;
+  padding: 15px 10px;
+}
