@@ -9,6 +9,7 @@ html {
   --roboto-cond: 'Roboto Condensed',
   sans-serif;
   --white: #FFFFFF;
+  font-size: 16px;
 }
 
 * {
@@ -22,14 +23,29 @@ body {
   background: var(--gray);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--black);
+}
+
 button {
-  border: none;
   font-family: var(--roboto);
   font-weight: bold;
 }
 
-h1,h2,h3,h4,h5,h6 {
-  color: var(--black);
+button, input {
+  border: none;
+}
+
+input {
+  background: var(--gray);
+  font-family: var(--roboto);
+  font-size: 1rem;
+  border-radius: 2px;
 }
 
 button.btn_primary {
