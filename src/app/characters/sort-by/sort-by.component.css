@@ -1,0 +1,23 @@
+.selector_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 35px;
+}
+
+h2 img {
+  vertical-align: middle;
+}
+
+select {
+  background: var(--white);
+  font-family: var(--roboto);
+  padding: 10px;
+  width: 200px;
+  margin: 10px 50px;
+  appearance: none;
+  border-radius: 2.5px;
+  border: 1px solid var(--gray-favorites);
+  background: url('/assets/btn_arrow_right.png') no-repeat center right,
+  linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+}
