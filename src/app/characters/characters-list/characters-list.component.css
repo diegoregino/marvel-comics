@@ -7,15 +7,43 @@
   background: var(--gray);
   display: grid;
   grid-area: character_content;
-  grid-gap: 15px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  padding: 15px;
+  grid-gap: 35px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 35px 15px 35px 35px;
 }
 
 .character_content .character_card {
   background: var(--white);
-  height: 300px;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* height: 300px; */
+  padding: 15px;
   width: 100%;
+}
+
+.character_content .character_card .col_card.card_top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.character_content .character_card .col_card.card_top p{
+  margin: 15px 0;
+}
+
+.character_content .character_card .col_card.card_btm p{
+  display: inline-block;
+  margin: 5px 15px 5px 0;
+}
+
+.character_content .character_card .col_card img {
+  width: 150px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,.2);
+  border-radius: 100%;
+  transform: translateX(-35px) translateY(-35px)
 }
 
 .favorites_content {
