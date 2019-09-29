@@ -1,0 +1,24 @@
+.characters_list {
+  display: grid;
+  grid-template-areas: "character_content character_content character_content favorites_content";
+}
+
+.character_content {
+  background: var(--gray);
+  display: grid;
+  grid-area: character_content;
+  grid-gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 15px;
+}
+
+.character_content .character_card {
+  background: var(--white);
+  height: 300px;
+  width: 100%;
+}
+
+.favorites_content {
+  background: var(--gray-favorites);
+  grid-area: favorites_content;
+}
