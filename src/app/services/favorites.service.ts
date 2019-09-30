@@ -28,8 +28,10 @@ export class FavoritesService {
     this.addToLocalStorage(favorites);
   }
 
-  myComicIsFav(idComic: number = 40630) {
-
+  myComicIsFav(comic) {
+    // idComic: number = 40630
+    const favorites = this.getFavorites();
+    return this.favoriteIs(favorites, comic);
   }
 
   private addToLocalStorage(list) {

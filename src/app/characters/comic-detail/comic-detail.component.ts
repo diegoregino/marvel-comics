@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output,EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { FavoritesService } from 'src/app/services/favorites.service';
 
 @Component({
@@ -17,12 +17,22 @@ export class ComicDetailComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngOnChanges(): void {
+    if (this.comic) {
+      this.comicIsFavorite(this.comic);
+    }
+  }
+
   closeModalEvent() {
     this.closeModal.emit(false);
   }
 
   addFavorite(comic) {
     this.favoritesService.addFavorite(comic);
+  }
+
+  comicIsFavorite(comic) {
+    return this.favoritesService.myComicIsFav(comic);
   }
 
 }

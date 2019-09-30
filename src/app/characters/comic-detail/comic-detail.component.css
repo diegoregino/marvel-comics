@@ -73,6 +73,11 @@
   background: var(--gray);
 }
 
+.modal .modal_content .modal_footer .big_btn.add_btn.added_state {
+  background: var(--brown);
+  color: var(--red-marvel);
+}
+
 .modal .modal_content .modal_footer .big_btn.buy_btn {
   background: var(--gray-favorites);
   color: var(--red-marvel);

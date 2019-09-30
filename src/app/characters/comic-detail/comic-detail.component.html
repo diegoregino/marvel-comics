@@ -11,8 +11,9 @@
       </div>
     </div>
     <div class="modal_footer">
-      <button (click)="addFavorite(comic)" class="big_btn add_btn">
-        <img src="assets/btn-favourites-default.png" alt="">
+      <button (click)="addFavorite(comic)" [ngClass]="{'added_state': comicIsFavorite(comic)}" class="big_btn add_btn">
+        <img *ngIf="!comicIsFavorite(comic)" src="assets/btn-favourites-default.png" alt="">
+        <img *ngIf="comicIsFavorite(comic)" src="assets/btn-favourites-primary.png" alt="">
         Add to favorites
       </button>
       <button class="big_btn buy_btn">
