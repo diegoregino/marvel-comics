@@ -33,10 +33,15 @@ h6 {
   font-family: var(--roboto);
 }
 
+p {
+  font-family: var(--roboto);
+}
+
 button {
   cursor: pointer;
   font-family: var(--roboto);
   font-weight: bold;
+  text-transform: uppercase;
 }
 
 button, input, select {
@@ -53,6 +58,5 @@ input {
 button.btn_primary {
   background: var(--red-marvel);
   color: var(--white);
-  text-transform: uppercase;
   padding: 10px 10px;
 }

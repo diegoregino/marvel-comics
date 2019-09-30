@@ -26,6 +26,8 @@ export class CharacterComicsComponent implements OnInit {
     this.getComics = this.marvelService.getMethod(`characters/${character}/comics`, 'limit=20').pipe(
       map(
         res => {
+          console.log(res.results);
+
           return res.results
         }
       )
