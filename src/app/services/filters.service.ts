@@ -10,7 +10,8 @@ export class FiltersService {
   private filterInitialState = {
     name: '',
     orderBy:'name',
-    offset: 0
+    offset: 0,
+    limit: 10,
   }
   filterState$: Observable<object>;
 

@@ -1,0 +1,2 @@
+<div (click)="openModalDetail(comic)" class="comic_item" *ngFor="let comic of getComics | async">{{comic.title}}</div>
+<app-comic-detail [comic]="currentComic" [openModal]="openModal" (closeModal)="closeModal($event)"></app-comic-detail>

@@ -7,9 +7,11 @@ import { FavoriteComicsComponent } from './favorite-comics/favorite-comics.compo
 import { SortByComponent } from './sort-by/sort-by.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 import { PaginatorComponent } from './paginator/paginator.component';
+import { CharacterComicsComponent } from './character-comics/character-comics.component';
+import { ComicDetailComponent } from './comic-detail/comic-detail.component';
 
 @NgModule({
-  declarations: [ CharactersListComponent, FavoriteComicsComponent, SortByComponent, FavoritesComponent, PaginatorComponent],
+  declarations: [ CharactersListComponent, FavoriteComicsComponent, SortByComponent, FavoritesComponent, PaginatorComponent, CharacterComicsComponent, ComicDetailComponent],
   imports: [
     CommonModule,
     CharactersRoutingModule

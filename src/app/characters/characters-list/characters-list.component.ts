@@ -30,7 +30,7 @@ export class CharactersListComponent implements OnInit {
     this.getCharacters = this.marvelService.getMethod('characters', params).pipe(
       map(
         res => {
-          console.log(res.results);
+          console.log(res.results)
           return res.results
         }
       )
@@ -38,9 +38,9 @@ export class CharactersListComponent implements OnInit {
   }
 
   filterToString() {
-    const {name, orderBy, offset} = this.filterState;
+    const {name, orderBy, offset, limit} = this.filterState;
     const nameValidate = name === '' ? '' : `name=${name}`;
-    const params = `${nameValidate}&orderBy=${orderBy}&offset=${offset}`;
+    const params = `limit=${limit}&${nameValidate}&orderBy=${orderBy}&offset=${offset}`;
     return params;
   }
 

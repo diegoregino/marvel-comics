@@ -5,6 +5,6 @@
   <a [ngClass]="{'active': newOffset === 20}" (click)="changeOffset(20)">3</a>
   <a [ngClass]="{'active': newOffset === 30}" (click)="changeOffset(30)">4</a>
   <a [ngClass]="{'active': newOffset === 40}" (click)="changeOffset(40)">5</a>
-  <a [ngClass]="{'active': false}"> {{newOffset > 40 ? ((newOffset+10)/10) : '...'}} </a>
+  <a [ngClass]="{'active': newOffset > 40}"> {{newOffset > 40 ? ((newOffset+10)/10) : '...'}} </a>
   <a [ngClass]="{'active': false}" (click)="changeOffset(1)">&raquo;</a>
 </div>

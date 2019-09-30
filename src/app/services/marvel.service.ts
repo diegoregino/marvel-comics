@@ -22,13 +22,9 @@ export class MarvelService {
   }
 
   getMethod(endpoint: string, params: string) {
-    const urlGet = `${this.apiUrl}${endpoint}?limit=10&${params}${this.keys}`
+    const urlGet = `${this.apiUrl}${endpoint}?${params}${this.keys}`
     return this.http.get(urlGet, { headers: this.httpHeader }).pipe(map(
       (res) => res['data']
     ));
-  }
-
-  posMethod() {
-    // return this.http.post(this.apiUrl + "Customers", JSON.stringify(customer), { headers: this.httpHeaders });
   }
 }

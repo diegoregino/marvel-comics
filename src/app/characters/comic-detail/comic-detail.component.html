@@ -1,0 +1,6 @@
+<div [ngClass]="{'modal': true, 'show_modal': openModal}" class="modal">
+  <div class="modal_content">
+    <h2>{{comic.title}}</h2>
+    <img (click)="closeModalEvent()" src="assets/btn-close.png" alt="" class="close_btn">
+  </div>
+</div>
