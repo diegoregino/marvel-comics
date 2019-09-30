@@ -6,10 +6,10 @@ import { CharactersListComponent } from './characters-list/characters-list.compo
 import { FavoriteComicsComponent } from './favorite-comics/favorite-comics.component';
 import { SortByComponent } from './sort-by/sort-by.component';
 import { FavoritesComponent } from './favorites/favorites.component';
-
+import { PaginatorComponent } from './paginator/paginator.component';
 
 @NgModule({
-  declarations: [CharactersListComponent, FavoriteComicsComponent, SortByComponent, FavoritesComponent],
+  declarations: [ CharactersListComponent, FavoriteComicsComponent, SortByComponent, FavoritesComponent, PaginatorComponent],
   imports: [
     CommonModule,
     CharactersRoutingModule
