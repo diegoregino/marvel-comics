@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -21,12 +22,10 @@ export class MarvelService {
   }
 
   getMethod(endpoint: string, params: string) {
-    const urlGet = `${this.apiUrl}${endpoint}?${params}${this.keys}`
-    this.http.get(urlGet, { headers: this.httpHeader }).subscribe(
-      res => {
-        console.log(res);
-      }
-    );
+    const urlGet = `${this.apiUrl}${endpoint}?limit=10&${params}${this.keys}`
+    return this.http.get(urlGet, { headers: this.httpHeader }).pipe(map(
+      (res) => res['data']
+    ));
   }
 
   posMethod() {

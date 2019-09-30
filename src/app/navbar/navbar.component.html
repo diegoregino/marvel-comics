@@ -1,5 +1,6 @@
 <nav>
   <img src="assets/marvel-logo.png" alt="Marvel logo" title="Marvel logo" class="marvel_logo">
-  <input type="search" placeholder="Search character..." name="" id="">
-  <img src="assets/search.png" alt="search icon" class="search_icon">
+  <input [(ngModel)]="searchInput" type="search" placeholder="Search character..."
+    name="" id="">
+  <img (click)='changeFilterState()' src="assets/search.png" alt="search icon" class="search_icon">
 </nav>

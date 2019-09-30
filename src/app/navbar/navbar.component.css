@@ -21,4 +21,5 @@ input {
 
 .search_icon {
   margin-left: -45px;
+  cursor: pointer;
 }
