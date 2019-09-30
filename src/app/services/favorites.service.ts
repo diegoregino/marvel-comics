@@ -12,13 +12,28 @@ export class FavoritesService {
     const favsIs = this.favoriteIs(favorites, comic);
     if (!favsIs) {
       const addFavorites = favorites.concat(comic);
-      localStorage.setItem('favs', JSON.stringify(addFavorites));
+      this.addToLocalStorage(addFavorites);
     }
   }
 
   getFavorites() {
     const favorites = JSON.parse(localStorage.getItem('favs'));
     return favorites;
+  }
+
+  deleteFavorite(comic) {
+    const favorites = this.getFavorites();
+    const favoritesIdx = favorites.map(fav => fav.id).indexOf(comic.id);
+    const newFav = favorites.splice(favoritesIdx, 1);
+    this.addToLocalStorage(favorites);
+  }
+
+  myComicIsFav(idComic: number = 40630) {
+
+  }
+
+  private addToLocalStorage(list) {
+    localStorage.setItem('favs', JSON.stringify(list));
   }
 
   private favoriteIs(favoritesList, comic) {

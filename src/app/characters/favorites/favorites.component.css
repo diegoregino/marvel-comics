@@ -1,5 +1,30 @@
-.fav_item {
-  width: 200px;
+.fav_content {
+  padding: 35px 20px;
+}
+
+.fav_content h2  img{
+  vertical-align: middle;
+}
+
+.fav_content .fav_item, .fav_content h2 {
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.fav_content .fav_item {
+  position: relative;
+  width: 250px;
+}
+
+.fav_content .fav_item .delete_btn {
+  cursor: pointer;
+  position: absolute;
+  right: -17px;
+  top: -17px;
+}
+
+.fav_content .fav_item .img_fav{
+  width: 100%;
   background: red;
-  height: 300px;
+  height: 350px;
 }
