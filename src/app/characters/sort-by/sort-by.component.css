@@ -1,0 +1,22 @@
+.selector_content {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+h2 img {
+  vertical-align: middle;
+}
+
+select {
+  appearance: none;
+  background: var(--white);
+  background: url('/assets/btn_arrow_right.png') no-repeat center right,
+  linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+  border-radius: 2.5px;
+  border: 1px solid var(--gray-favorites);
+  font-family: var(--roboto);
+  padding: 10px;
+  width: 200px;
+}

@@ -1,0 +1,84 @@
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  /* padding-top: 100px; */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* overflow: auto; */
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.show_modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.modal .modal_content {
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 400px;
+  position: relative;
+  width: 700px;
+}
+
+.modal .modal_content .close_btn {
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.modal .modal_content .modal_body {
+  padding: 35px 15px 15px 15px;
+  display: flex;
+}
+
+.modal .modal_content .modal_body .img_comic {
+  height: 300px;
+}
+
+.modal .modal_content .modal_body .col_img {
+  margin-right: 30px;
+}
+
+.modal .modal_content .modal_body .col_text h2 {
+  margin-bottom: 20px;
+}
+
+.modal .modal_content .modal_body .col_text p {
+  max-height: 150px;
+  overflow: hidden;
+}
+
+.modal .modal_content .modal_footer .big_btn {
+  font-size: 1rem;
+  padding: 15px 0;
+  width: 50%;
+}
+
+.modal .modal_content .modal_footer .big_btn img {
+  vertical-align: bottom;
+  width: 25px;
+}
+
+.modal .modal_content .modal_footer .big_btn.add_btn {
+  background: var(--gray);
+}
+
+.modal .modal_content .modal_footer .big_btn.add_btn.added_state {
+  background: var(--brown);
+  color: var(--red-marvel);
+}
+
+.modal .modal_content .modal_footer .big_btn.buy_btn {
+  background: var(--gray-favorites);
+  color: var(--red-marvel);
+}

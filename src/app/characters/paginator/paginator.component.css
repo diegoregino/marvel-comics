@@ -1,0 +1,25 @@
+.pagination {
+  margin-top: 35px;
+  text-align: center;
+}
+
+.pagination a {
+  background: var(--white);
+  border-radius: 1px;
+  box-shadow: 0 1px 2.5px rgba(0,0,0,.3);
+  color: var(--gray-favorites);
+  cursor: pointer;
+  display: inline-block;
+  font-family: var(--roboto-cond);
+  font-weight: bold;
+  height: 50px;
+  line-height: 50px;
+  margin: 0 10px;
+  text-decoration: none;
+  width: 50px;
+}
+
+.pagination a.active {
+  background: var(--gray);
+  color: var(--black);
+}

@@ -1,0 +1,29 @@
+<div class="characters_list">
+  <div class="character_content">
+    <app-sort-by></app-sort-by>
+    <div class="list_content">
+      <div *ngFor="let character of getCharacters | async" class="character_card">
+        <img class="img_character" src="{{character.thumbnail.path + '.' + character.thumbnail.extension}}" alt="">
+        <div class="col_card card_top">
+          <article>
+            <h3>{{character.name}}</h3>
+            <p>{{character.description}}</p>
+            <button routerLink="/comics/{{character.id}}" class="btn_primary">View more</button>
+          </article>
+        </div>
+        <div class="col_card card_btm">
+          <h3>Related comics</h3>
+          <p>Aquí el numbre</p>
+          <p>Aquí otro numbre</p>
+          <p>Aquí el numbre</p>
+          <p>Aquí otro numbre</p>
+        </div>
+
+      </div>
+    </div>
+    <app-paginator></app-paginator>
+  </div>
+  <div class="favorites_content">
+    <app-favorites></app-favorites>
+  </div>
+</div>

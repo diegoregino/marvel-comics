@@ -1,0 +1,61 @@
+.characters_list {
+  display: grid;
+  grid-template-areas: "character_content character_content favorites_content";
+}
+
+.character_content {
+  background: var(--gray);
+  grid-area: character_content;
+  padding: 35px 15px 35px 35px;
+}
+
+.list_content {
+  display: grid;
+  grid-gap: 35px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+
+.character_content .character_card {
+  background: var(--white);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 250px;
+  padding: 15px;
+  width: 100%;
+}
+
+.character_content .character_card .col_card.card_top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.character_content .character_card .col_card.card_top p {
+  margin: 15px 0;
+}
+
+article {
+  padding-left: 150px;
+}
+
+.character_content .character_card .col_card.card_btm p {
+  display: inline-block;
+  margin: 5px 15px 5px 0;
+}
+
+.character_content .character_card .img_character {
+  width: 150px;
+  height: 150px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
+  border-radius: 100%;
+  transform: translateX(-35px) translateY(-35px);
+  position: absolute;
+}
+
+.favorites_content {
+  background: var(--gray-favorites);
+  grid-area: favorites_content;
+}

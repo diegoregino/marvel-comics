@@ -1,0 +1,26 @@
+nav {
+  background: #000000;
+  display: flex;
+  height: 60px;
+  justify-content: center;
+  padding: 10px 10px;
+  position: relative;
+}
+
+.marvel_logo {
+  cursor: pointer;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+input {
+  padding: 5px 40px 5px 10px;
+  width: 40%;
+}
+
+.search_icon {
+  margin-left: -45px;
+  cursor: pointer;
+}

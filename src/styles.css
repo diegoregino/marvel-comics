@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 html {
   --black: #202020;
+  --brown: #151515;
   --gray: #EFEFEF;
   --gray-favorites: #CFCFCF;
   --red-marvel: #F0141E;
@@ -9,6 +10,7 @@ html {
   --roboto-cond: 'Roboto Condensed',
   sans-serif;
   --white: #FFFFFF;
+  font-size: 16px;
 }
 
 * {
@@ -22,19 +24,40 @@ body {
   background: var(--gray);
 }
 
-button {
-  border: none;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--black);
   font-family: var(--roboto);
-  font-weight: bold;
 }
 
-h1,h2,h3,h4,h5,h6 {
-  color: var(--black);
+p {
+  font-family: var(--roboto);
+}
+
+button {
+  cursor: pointer;
+  font-family: var(--roboto);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+button, input, select {
+  border: none;
+}
+
+input {
+  background: var(--gray);
+  font-family: var(--roboto);
+  font-size: 1rem;
+  border-radius: 2px;
 }
 
 button.btn_primary {
   background: var(--red-marvel);
   color: var(--white);
-  text-transform: uppercase;
-  padding: 15px 10px;
+  padding: 10px 10px;
 }

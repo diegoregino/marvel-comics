@@ -1,0 +1,25 @@
+<div *ngIf="comic" [ngClass]="{'modal': true, 'show_modal': openModal}" class="modal">
+  <div class="modal_content">
+    <img (click)="closeModalEvent()" src="assets/btn-close.png" alt="" class="close_btn">
+    <div class="modal_body">
+      <div class="col_img">
+        <img src="{{comic.images[0].path + '.' + comic.images[0].extension}}" alt="" class="img_comic">
+      </div>
+      <div class="col_text">
+        <h2>{{comic.title}}</h2>
+        <p>{{comic.description}}</p>
+      </div>
+    </div>
+    <div class="modal_footer">
+      <button (click)="addFavorite(comic)" [ngClass]="{'added_state': comicIsFavorite(comic)}" class="big_btn add_btn">
+        <img *ngIf="!comicIsFavorite(comic)" src="assets/btn-favourites-default.png" alt="">
+        <img *ngIf="comicIsFavorite(comic)" src="assets/btn-favourites-primary.png" alt="">
+        Add to favorites
+      </button>
+      <button class="big_btn buy_btn">
+        <img src="assets/shopping-cart-primary.png" alt="">
+        Buy For ${{comic.prices[comic.prices.length - 1].price}}
+      </button>
+    </div>
+  </div>
+</div>
