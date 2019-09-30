@@ -18,7 +18,6 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     this.filterService.filterState$.subscribe(
       res => {
-        console.log(res);
         this.filterState = res;
       }
     )

@@ -3,7 +3,7 @@
     <app-sort-by></app-sort-by>
     <div class="list_content">
       <div *ngFor="let character of getCharacters | async" class="character_card">
-        <img class="img_character" src="http://i.annihil.us/u/prod/marvel/i/mg/9/c0/527bb7b37ff55.jpg" alt="">
+        <img class="img_character" src="{{character.thumbnail.path + '.' + character.thumbnail.extension}}" alt="">
         <div class="col_card card_top">
           <article>
             <h3>{{character.name}}</h3>
