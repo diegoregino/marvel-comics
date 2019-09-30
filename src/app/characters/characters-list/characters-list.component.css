@@ -1,6 +1,6 @@
 .characters_list {
   display: grid;
-  grid-template-areas: "character_content character_content character_content character_content favorites_content";
+  grid-template-areas: "character_content character_content favorites_content";
 }
 
 .character_content {
