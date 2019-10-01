@@ -18,8 +18,6 @@ export class FavoritesService {
 
   getFavorites() {
     const favorites = JSON.parse(localStorage.getItem('favs'));
-    console.log(favorites);
-
     return favorites !== null ? favorites : [];
   }
 
