@@ -18,7 +18,9 @@ export class FavoritesService {
 
   getFavorites() {
     const favorites = JSON.parse(localStorage.getItem('favs'));
-    return favorites;
+    console.log(favorites);
+
+    return favorites !== null ? favorites : [];
   }
 
   deleteFavorite(comic) {
@@ -29,7 +31,6 @@ export class FavoritesService {
   }
 
   myComicIsFav(comic) {
-    // idComic: number = 40630
     const favorites = this.getFavorites();
     return this.favoriteIs(favorites, comic);
   }

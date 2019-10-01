@@ -18,23 +18,29 @@ export class PaginatorComponent implements OnInit {
     this.filterService.filterState$.subscribe(
       res => {
         this.filterState = res;
-        console.log(res);
       }
     );
   }
 
-  changeOffset(newOffset: number) {
+  changeOffset(offset: number) {
 
-    if (newOffset === -1 && this.newOffset < 0) {
+    if (offset === -1 && this.newOffset < 0) {
       this.newOffset -= 10;
-    } else if (newOffset === 1) {
-      console.log('entro con 1')
+    } else if (offset === 1) {
       this.newOffset += 10;
     } else {
-      this.newOffset = newOffset;
+      this.newOffset = offset;
     }
     this.filterState.offset = this.newOffset;
     this.filterService.changeFilterState(this.filterState);
+  }
+
+  currentOffset(offset: number, equal: string) {
+    return (equal === 'equal') ? this.newOffset === offset : this.newOffset > offset;
+  }
+
+  getCurrentOffset() {
+    return this.newOffset;
   }
 
 }
