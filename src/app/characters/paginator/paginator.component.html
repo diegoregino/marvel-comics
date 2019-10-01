@@ -1,10 +1,10 @@
 <div class="pagination">
   <a [ngClass]="{'active': false}" (click)="changeOffset(-1)">&laquo;</a>
-  <a [ngClass]="{'active': newOffset === 0}" (click)="changeOffset(0)">1</a>
-  <a [ngClass]="{'active': newOffset === 10}" (click)="changeOffset(10)">2</a>
-  <a [ngClass]="{'active': newOffset === 20}" (click)="changeOffset(20)">3</a>
-  <a [ngClass]="{'active': newOffset === 30}" (click)="changeOffset(30)">4</a>
-  <a [ngClass]="{'active': newOffset === 40}" (click)="changeOffset(40)">5</a>
-  <a [ngClass]="{'active': newOffset > 40}"> {{newOffset > 40 ? ((newOffset+10)/10) : '...'}} </a>
+  <a [ngClass]="{'active': currentOffset(0,'equal')}" (click)="changeOffset(0)">1</a>
+  <a [ngClass]="{'active': currentOffset(10,'equal')}" (click)="changeOffset(10)">2</a>
+  <a [ngClass]="{'active': currentOffset(20,'equal')}" (click)="changeOffset(20)">3</a>
+  <a [ngClass]="{'active': currentOffset(30,'equal')}" (click)="changeOffset(30)">4</a>
+  <a [ngClass]="{'active': currentOffset(40,'equal')}" (click)="changeOffset(40)">5</a>
+  <a [ngClass]="{'active': currentOffset(40,'grater')}"> {{currentOffset(40,'grater') ? ((getCurrentOffset()+10)/10) : '...'}} </a>
   <a [ngClass]="{'active': false}" (click)="changeOffset(1)">&raquo;</a>
 </div>

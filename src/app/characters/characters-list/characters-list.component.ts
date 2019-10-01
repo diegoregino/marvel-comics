@@ -30,7 +30,6 @@ export class CharactersListComponent implements OnInit {
     this.getCharacters = this.marvelService.getMethod('characters', params).pipe(
       map(
         res => {
-          console.log(res.results)
           return res.results
         }
       )
