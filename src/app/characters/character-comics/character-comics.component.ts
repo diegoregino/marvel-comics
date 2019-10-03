@@ -10,11 +10,15 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./character-comics.component.css']
 })
 export class CharacterComicsComponent implements OnInit {
-  getComics: Observable<any>;
+  getComics: any;
   openModal: boolean;
   currentComic: any;
+  openFavsToggle: boolean;
+  loading: boolean;
 
-  constructor(private rutaActiva: ActivatedRoute, private marvelService: MarvelService) { }
+  constructor(private rutaActiva: ActivatedRoute, private marvelService: MarvelService) {
+    this.loading = true;
+  }
 
   ngOnInit() {
     const character = this.rutaActiva.snapshot.params.character;
@@ -24,11 +28,12 @@ export class CharacterComicsComponent implements OnInit {
 
   getComicsList(character: string) {
     this.getComics = this.marvelService.getMethod(`characters/${character}/comics`, 'limit=20').pipe(
-      map(
-        res => {
-          return res.results
-        }
-      )
+      map(res => res.results)
+    ).subscribe(
+      res => {
+        this.loading = res ? false : true;
+        this.getComics = res;
+      }
     );
   }
 
@@ -39,6 +44,10 @@ export class CharacterComicsComponent implements OnInit {
 
   closeModal($event) {
     this.openModal = $event;
+  }
+
+  openFavs() {
+    this.openFavsToggle = !this.openFavsToggle;
   }
 
 }

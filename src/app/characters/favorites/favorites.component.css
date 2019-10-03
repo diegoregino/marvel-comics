@@ -1,5 +1,6 @@
 .fav_content {
   padding: 35px 20px;
+  position: relative;
 }
 
 .fav_content h2  img{
@@ -24,7 +25,7 @@
 }
 
 .fav_content .fav_item .img_fav{
-  width: 100%;
-  background: red;
+  background: var(--red-marvel);
   height: 350px;
+  width: 100%;
 }

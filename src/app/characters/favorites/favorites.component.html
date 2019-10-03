@@ -1,8 +1,8 @@
 <div class="fav_content">
   <h2><img src="/assets/btn-favourites-primary.png" alt="">My favorites</h2>
   <div *ngFor="let fav of favoritesList" class="fav_item">
-    <img (click)="deleteFavorite(fav)" src="assets/btn-delete.png" alt="" class="delete_btn">
-    <img src="{{fav.images[0].path + '.' + fav.images[0].extension}}" alt="" class="img_fav">
+    <img (click)="deleteFavorite(fav)" src="/assets/btn-delete.png" alt="" class="delete_btn">
+    <img src="{{imageSrc(fav)}}" alt="" class="img_fav">
     <h3>{{fav.title}}</h3>
   </div>
 </div>

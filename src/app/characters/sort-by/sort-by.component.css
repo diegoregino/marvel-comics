@@ -5,10 +5,6 @@
   margin-bottom: 40px;
 }
 
-h2 img {
-  vertical-align: middle;
-}
-
 select {
   appearance: none;
   background: var(--white);

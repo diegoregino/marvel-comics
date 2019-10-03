@@ -21,6 +21,18 @@ input {
 }
 
 .search_icon {
-  margin-left: -45px;
+  margin-left: -35px;
   cursor: pointer;
+  border-radius: 0 2px 2px 0;
+  background: var(--gray-favorites);
+}
+
+@media only screen and (max-width: 500px) {
+  nav {
+    justify-content: flex-end;
+  }
+
+  input {
+    width: 50%;
+  }
 }

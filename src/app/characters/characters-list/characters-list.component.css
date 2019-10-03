@@ -1,14 +1,3 @@
-.characters_list {
-  display: grid;
-  grid-template-areas: "character_content character_content favorites_content";
-}
-
-.character_content {
-  background: var(--gray);
-  grid-area: character_content;
-  padding: 35px 15px 35px 35px;
-}
-
 .list_content {
   display: grid;
   grid-gap: 35px;
@@ -43,6 +32,9 @@ article {
 
 .character_content .character_card .col_card.card_btm p {
   display: inline-block;
+  max-width: 200px;
+  overflow: hidden;
+  height: 20px;
   margin: 5px 15px 5px 0;
 }
 
@@ -55,7 +47,46 @@ article {
   position: absolute;
 }
 
-.favorites_content {
+.arrow_toggle {
   background: var(--gray-favorites);
-  grid-area: favorites_content;
+  color: var(--red-marvel);
+  cursor: pointer;
+  display: none;
+  font-size: 1.5rem;
+  padding: 0 5px;
+  position: absolute;
+  right: 100%;
+  top: 0;
+}
+
+@media only screen and (max-width: 700px) {
+  .arrow_toggle {
+    display: block;
+  }
+
+  .rotate_arrow {
+    display: block;
+    transform: rotateZ(180deg);
+  }
+
+  .openFavs {
+    left: calc(100% - 290px);
+    position: fixed;
+  }
+
+}
+
+@media only screen and (max-width: 450px) {
+  .list_content {
+    grid-template-columns: 300px;
+  }
+
+  .img_character {
+    width: 100px;
+  }
+
+  .character_card .col_card.card_top p {
+    height: 55px;
+    overflow: hidden;
+  }
 }
