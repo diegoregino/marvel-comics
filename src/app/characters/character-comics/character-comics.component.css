@@ -1,14 +1,95 @@
-.comic_item {
-  border: 1px solid var(--black);
-  display: inline-block;
-  cursor: pointer;
-  margin: 10px 20px;
-  padding: 10px 20px;
-  position: relative;
-  transition: .4s;
+.character_content {
+  padding: 35px 0px 15px 15px;
 }
 
-.comic_item:hover {
-  background: var(--black);
-  color: var(--white);
+h2 {
+  margin-bottom: 35px;
+}
+
+.comic_item {
+  border-radius: 5px 5px 6px 6px;
+  display: inline-block;
+  cursor: pointer;
+  height: 350px;
+  margin: 10px 10px 10px 0;
+  position: relative;
+  transition: .4s;
+  text-align: center;
+  width: 250px;
+}
+
+.comic_item:hover .comic_hover {
+  visibility: visible
+}
+
+.comic_item img {
+  border-radius: inherit;
+  display: block;
+  height: 350px;
+  object-fit: cover;
+  object-position: left;
+  width: 100%;
+}
+
+.comic_item p {
+  background: var(--white);
+  bottom: 0;
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+  position: absolute;
+  width: 100%;
+}
+
+.comic_hover {
+  background: rgba(0,0,0,.4);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  visibility: hidden;
+  width: 100%;
+}
+
+.arrow_toggle {
+  background: var(--gray-favorites);
+  color: var(--red-marvel);
+  cursor: pointer;
+  display: none;
+  font-size: 1.5rem;
+  padding: 0 5px;
+  position: absolute;
+  right: 100%;
+  transition: .4s;
+  top: 0;
+}
+
+.openFavs {
+  position: relative;
+}
+
+.rotate_arrow {
+  display: none;
+}
+
+.wrap {
+  margin: 20px 0 0 20px;
+}
+
+@media only screen and (max-width: 600px) {
+  .arrow_toggle {
+    display: block;
+  }
+
+  .rotate_arrow {
+    display: block;
+    transform: rotateZ(180deg);
+  }
+
+  .openFavs {
+      left: calc(100% - 290px);
+      position: fixed;
+  }
 }

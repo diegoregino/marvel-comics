@@ -1,8 +1,14 @@
 <div class="characters_list">
   <div class="character_content">
     <app-sort-by></app-sort-by>
-    <div class="list_content">
-      <div *ngFor="let character of getCharacters | async" class="character_card">
+    <div *ngIf="loading" class="wrap">
+      <div class="loading">
+        <div class="bounceball"></div>
+        <div class="text">we are getting the info </div>
+      </div>
+    </div>
+    <div *ngIf="!loading" class="list_content">
+      <div *ngFor="let character of getCharacters" class="character_card">
         <img class="img_character" src="{{character.thumbnail.path + '.' + character.thumbnail.extension}}" alt="">
         <div class="col_card card_top">
           <article>
@@ -13,17 +19,17 @@
         </div>
         <div class="col_card card_btm">
           <h3>Related comics</h3>
-          <p>Aquí el numbre</p>
-          <p>Aquí otro numbre</p>
-          <p>Aquí el numbre</p>
-          <p>Aquí otro numbre</p>
+          <p *ngFor="let rel of character.comics.items">{{rel.name}}</p>
         </div>
 
       </div>
     </div>
-    <app-paginator></app-paginator>
+    <app-paginator *ngIf="!loading"></app-paginator>
   </div>
-  <div class="favorites_content">
+  <div *ngIf="!loading" [ngClass]="{'openFavs': openFavsToggle}" class="favorites_content">
+    <div (click)="openFavs()" class="arrow_toggle">
+      <span [ngClass]="{'rotate_arrow': openFavsToggle}">⭠</span>
+    </div>
     <app-favorites></app-favorites>
   </div>
 </div>

@@ -1,2 +1,26 @@
-<div (click)="openModalDetail(comic)" class="comic_item" *ngFor="let comic of getComics | async">{{comic.title}}</div>
-<app-comic-detail [comic]="currentComic" [openModal]="openModal" (closeModal)="closeModal($event)"></app-comic-detail>
+<div class="characters_list">
+  <div *ngIf="loading" class="wrap">
+    <div class="loading">
+      <div class="bounceball"></div>
+      <div class="text">we are getting the info </div>
+    </div>
+  </div>
+  <div *ngIf="!loading" class="character_content">
+      <h2><img src="/assets/characters.png" alt=""> Characters</h2>
+    <div class="comic_item" *ngFor="let comic of getComics">
+      <img src="{{comic.thumbnail.path + '.' + comic.thumbnail.extension}}" alt="">
+      <p>{{comic.title}}</p>
+      <div class="comic_hover">
+        <button (click)="openModalDetail(comic)" class="btn_primary">VIEW DETAIL</button>
+      </div>
+    </div>
+    <app-comic-detail [comic]="currentComic" [openModal]="openModal" (closeModal)="closeModal($event)">
+    </app-comic-detail>
+  </div>
+  <div *ngIf="!loading" [ngClass]="{'openFavs': openFavsToggle}" class="favorites_content">
+    <div (click)="openFavs()" class="arrow_toggle">
+      <span [ngClass]="{'rotate_arrow': openFavsToggle}">⭠</span>
+    </div>
+    <app-favorites></app-favorites>
+  </div>
+</div>

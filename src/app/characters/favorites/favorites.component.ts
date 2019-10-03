@@ -24,4 +24,9 @@ export class FavoritesComponent implements OnInit {
     this.favoritesList = this.favoritesService.getFavorites();
   }
 
+  imageSrc(fav) {
+    return `${fav.thumbnail.path}.${fav.thumbnail.extension}`;
+
+  }
+
 }
